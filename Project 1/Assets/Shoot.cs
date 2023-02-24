@@ -8,7 +8,6 @@ public class Shoot : MonoBehaviour
     public Transform shootSpot;
     public GameObject Bullet;
     public int fireRate;
-    public int Damage;
     int i = 0;
 
     // Update is called once per frame
