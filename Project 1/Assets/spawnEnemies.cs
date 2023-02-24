@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class spawnEnemies : MonoBehaviour
 {   
-    int spawnRate = 50;
+    int spawnRate = 500;
     int i = 0;
-    int minDist = 10;
-    int maxDist = 10;
+
     public GameObject enemy;
 
     // Update is called once per frame
@@ -15,7 +14,10 @@ public class spawnEnemies : MonoBehaviour
     {
         i++;
         if(i==spawnRate){
-            Instantiate(enemy, new Vector3(Random.Range(minDist, maxDist), Random.Range(minDist, maxDist), 0), transform.rotation);
+            Vector2 spawn = Random.insideUnitCircle * 20;
+            spawn.x += transform.position.x;
+            spawn.y += transform.position.y;
+            Instantiate(enemy, new Vector3(spawn.x, spawn.y, 0), transform.rotation);
             i=0;
         }
         
