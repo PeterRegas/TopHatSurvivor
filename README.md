@@ -5,7 +5,7 @@ You can work on this assignment alone or in a group of no more than 2 students.
 | Group Member Name          | GitHub Username    |
 | :------------------------- |:------------------:|
 | Jonathan Zhu | ImJonathanZ |
-| <first_name2> <last_name2> | <github_username2> |
+| Peter Regas | PeterRegas |
 
 Trailer video URL: _________________________
 
