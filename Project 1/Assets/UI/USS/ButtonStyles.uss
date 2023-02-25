@@ -1,0 +1,30 @@
+.buttonStyle {
+    height: 37px;
+    width: 157px;
+    background-color: rgb(72, 192, 70);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.buttonStyle:hover {
+    height: 37px;
+    width: 157px;
+    background-color: rgb(31, 152, 29);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.buttonStyle:active {
+    height: 37px;
+    width: 157px;
+    background-color: rgb(31, 152, 29);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: rgba(255, 255, 255, 255);
+}
