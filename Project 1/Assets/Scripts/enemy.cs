@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class enemy : MonoBehaviour
 {
-    public int health = 10;
+    public int enemyHealth = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +17,8 @@ public class enemy : MonoBehaviour
 
     }
     public void Hit(int damage){
-        health -= damage;
-        if(health <= 0){
+        enemyHealth -= damage;
+        if(enemyHealth <= 0){
             Destroy(gameObject);
         }
     }
