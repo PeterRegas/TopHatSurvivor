@@ -233,8 +233,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723711466}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.088388, y: 0.044194, z: 0}
+  m_LocalScale: {x: 1.0884, y: 1.0884, z: 1.0884}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1009433450}
@@ -4081,6 +4081,7 @@ GameObject:
   - component: {fileID: 1380063774}
   - component: {fileID: 1380063775}
   - component: {fileID: 1380063776}
+  - component: {fileID: 1380063777}
   m_Layer: 6
   m_Name: Character
   m_TagString: Player
@@ -4184,6 +4185,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 2365089960567444592, guid: 515e88ef3e8fa3f4b90a85908abc1ca3, type: 3}
+--- !u!114 &1380063777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380063769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f49beaea3ded7524290da7cc89c258db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  score: 0
+  experience: 0
 --- !u!1 &1769123909
 GameObject:
   m_ObjectHideFlags: 0
@@ -4262,7 +4278,7 @@ Transform:
   m_GameObject: {fileID: 1769123909}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.04, y: 0.04, z: -9.999303}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 200, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1380063771}

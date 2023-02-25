@@ -17,7 +17,7 @@ public class enemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-                float xDirection = Input.GetAxis("Horizontal");
+        float xDirection = Input.GetAxis("Horizontal");
         float yDirection = Input.GetAxis("Vertical");
         if(xDirection>0){
             //animator.SetBool("walk right", true);
