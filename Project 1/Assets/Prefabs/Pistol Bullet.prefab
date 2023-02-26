@@ -138,4 +138,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotSpeed: 20
   range: 1
+  damage: 5
   bulletPhysics: {fileID: 2288624135583980624}
