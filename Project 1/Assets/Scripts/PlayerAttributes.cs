@@ -8,39 +8,40 @@ using TMPro;
 public class PlayerAttributes : MonoBehaviour
 {
 
-    public int health, score, level;
-    public float experience;
+    //public int health, score, level;
+    //public float experience;
     private const float baseExperience = 100f;
     private const float levelUpExponent = 0.7f; //Make this larger to make it harder to level up every level
     [SerializeField] Slider healthSlider;
     [SerializeField] Slider experienceSlider;
     [SerializeField] TextMeshProUGUI levelNum;
-    private SaveManager saveManager;
-    
-   
+    public SaveManager saveManager;
+    private SaveState saveState;
+
 
     // Start is called before the first frame update
     void Start()
     {
+
         //Loads data based on save file
         saveManager = FindObjectOfType<SaveManager>();
-        SaveState saveState = saveManager.playerStats;
-        health = saveState.health;
-        score = saveState.score;
-        experience = saveState.experience;
-        level = saveState.level;
+        saveState = saveManager.playerStats;
+        
+        //saveState = saveManager.playerStats;
+            
+        
+        
 
         updateXP(0);
         updateHealth(0);
-        levelNum.text = "Level " + level.ToString();
+        levelNum.text = "Level " + saveState.level.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-
-        levelNum.text = "Level " + level.ToString();
+        levelNum.text = "Level " + saveState.level.ToString();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -61,24 +62,24 @@ public class PlayerAttributes : MonoBehaviour
     //Useful for when player picks up health, give postive value
     private void updateHealth(int value)
     {
-        health += value;
-        healthSlider.value = health;
+        saveState.health += value;
+        healthSlider.value = saveState.health;
     }
 
     //Updated player XP and level based on how much XP was picked up
     //XP object needs tag "xp"
     private void updateXP(float value)
     {
-        experience += value;
-        float totalExperienceRequired = baseExperience * Mathf.Pow(level, levelUpExponent);
-        if (experience >= totalExperienceRequired)
+        saveState.experience += value;
+        float totalExperienceRequired = baseExperience * Mathf.Pow(saveState.level, levelUpExponent);
+        if (saveState.experience >= totalExperienceRequired)
         {
-            level+= Mathf.FloorToInt(experience /totalExperienceRequired);
-            experience -= totalExperienceRequired * Mathf.FloorToInt(experience / totalExperienceRequired);
+            saveState.level += Mathf.FloorToInt(saveState.experience /totalExperienceRequired);
+            saveState.experience -= totalExperienceRequired * Mathf.FloorToInt(saveState.experience / totalExperienceRequired);
         }
-        Debug.Log(experience);
-        totalExperienceRequired = baseExperience * Mathf.Pow(level, levelUpExponent);
-        float percentageProgress = (experience / totalExperienceRequired) * 100.0f;
+        
+        totalExperienceRequired = baseExperience * Mathf.Pow(saveState.level, levelUpExponent);
+        float percentageProgress = (saveState.experience / totalExperienceRequired) * 100.0f;
         experienceSlider.value = percentageProgress;
     }
 

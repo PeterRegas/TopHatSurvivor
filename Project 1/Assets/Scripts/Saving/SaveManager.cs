@@ -7,7 +7,7 @@ public class SaveManager : MonoBehaviour
 
     private string savePath;
 
-    private void Start()
+    private void Awake()
     {
         savePath = Application.persistentDataPath + "/saveData/";
         if (!Directory.Exists(savePath))
