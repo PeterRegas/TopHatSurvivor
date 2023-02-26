@@ -43,3 +43,6 @@ Authors: drjamgo@hotmail.com, bluecarrot16, Evert, TheraHedwig, MuffinElZangano,
 - feet/shoes/male/red.png: by bluecarrot16, Johannes Sjölund (wulax). License(s): CC-BY-SA 3.0, GPL 3.0. 
     - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites
     - http://opengameart.org/content/lpc-clothing-updates
+
+- Icons
+    - https://kenney.nl/assets/game-icons
