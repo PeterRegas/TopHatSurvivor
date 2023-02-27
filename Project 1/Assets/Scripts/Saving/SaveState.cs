@@ -1,21 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 [System.Serializable]
-public class SaveState : MonoBehaviour
+public class SaveState
 {
-    public int health, score, level;
+    public int health;
+    public int score;
+    public int level;
     public float experience;
 
 
     public SaveState()
     {
-        this.health = 100;
-        this.score = 0;
-        this.level = 1;
-        this.experience = 0.0f;
+        health = 100;
+        score = 0;
+        level = 1;
+        experience = 0.0f;
     }
+    
     public SaveState(int health, int score, int level, float experience)
     {
         this.health = health;

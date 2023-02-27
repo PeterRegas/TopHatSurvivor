@@ -18,8 +18,18 @@ public class JSONLoaderSaver
     {
         if (File.Exists(savePath + filename))
         {
+            Debug.Log("Trying to log at: " + savePath + filename);
             string json = File.ReadAllText(savePath + filename);
+            Debug.Log("JSON" + json);
             SaveState playerStats = JsonUtility.FromJson<SaveState>(json);
+
+            /*
+            Debug.Log("Health:" + playerStats.health);
+            Debug.Log("Score:" + playerStats.score);
+            Debug.Log("Level:" + playerStats.level);
+            Debug.Log("XP:" + playerStats.experience);
+            */
+
             return playerStats;
         }
         Debug.Log("Unable to load from file: " + savePath + filename);

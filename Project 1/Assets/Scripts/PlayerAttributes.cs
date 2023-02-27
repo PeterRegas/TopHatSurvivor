@@ -8,30 +8,32 @@ using TMPro;
 public class PlayerAttributes : MonoBehaviour
 {
 
-    //public int health, score, level;
-    //public float experience;
+    public int health, score, level;
+    public float experience;
     private const float baseExperience = 100f;
     private const float levelUpExponent = 0.7f; //Make this larger to make it harder to level up every level
     [SerializeField] Slider healthSlider;
     [SerializeField] Slider experienceSlider;
     [SerializeField] TextMeshProUGUI levelNum;
     public SaveManager saveManager;
-    private SaveState saveState;
+    public SaveState saveState;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+       
         //Loads data based on save file
         saveManager = FindObjectOfType<SaveManager>();
         saveState = saveManager.playerStats;
-        
-        //saveState = saveManager.playerStats;
-            
-        
-        
 
+        //saveState = saveManager.playerStats;
+
+        //Sets the current attributes based on the a saveState class
+        health = saveState.health;
+        score = saveState.score;
+        level = saveState.level;
+        experience = saveState.experience;
         updateXP(0);
         updateHealth(0);
         levelNum.text = "Level " + saveState.level.ToString();
@@ -40,7 +42,16 @@ public class PlayerAttributes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //constantly update the player attributes based on the saveState class attributes. 
+        health = saveState.health;
+        score = saveState.score;
+        level = saveState.level;
+        experience = saveState.experience;
+        saveState = saveManager.playerStats;
+        updateXP(0);
+        updateHealth(0);
 
+        //Change player level based on 
         levelNum.text = "Level " + saveState.level.ToString();
     }
 
@@ -77,9 +88,9 @@ public class PlayerAttributes : MonoBehaviour
             saveState.level += Mathf.FloorToInt(saveState.experience /totalExperienceRequired);
             saveState.experience -= totalExperienceRequired * Mathf.FloorToInt(saveState.experience / totalExperienceRequired);
         }
-        
-        totalExperienceRequired = baseExperience * Mathf.Pow(saveState.level, levelUpExponent);
-        float percentageProgress = (saveState.experience / totalExperienceRequired) * 100.0f;
+        // Debug.Log("Experience:" + saveState.experience);
+        totalExperienceRequired = baseExperience * Mathf.Pow(level, levelUpExponent);
+        float percentageProgress = (experience / totalExperienceRequired) * 100.0f;
         experienceSlider.value = percentageProgress;
     }
 

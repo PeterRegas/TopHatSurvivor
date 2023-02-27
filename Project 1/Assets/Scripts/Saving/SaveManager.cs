@@ -23,7 +23,7 @@ public class SaveManager : MonoBehaviour
     public void savePlayerStats()
     {
         // save the data
-        JSONLoaderSaver.SaveAsJSON(savePath, "playStats.json", this.playerStats);
+        JSONLoaderSaver.SaveAsJSON(savePath, "playerStats.json", this.playerStats);
     }
 
     [ContextMenu("Load playerStats")]
