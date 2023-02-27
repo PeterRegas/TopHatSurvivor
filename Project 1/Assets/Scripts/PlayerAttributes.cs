@@ -71,7 +71,7 @@ public class PlayerAttributes : MonoBehaviour
     //changes player health based on a given value
     //Useful for when enemy hits, give a negative value
     //Useful for when player picks up health, give postive value
-    private void updateHealth(int value)
+    public void updateHealth(int value)
     {
         saveState.health += value;
         healthSlider.value = saveState.health;
