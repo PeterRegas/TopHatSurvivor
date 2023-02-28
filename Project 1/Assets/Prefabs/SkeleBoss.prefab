@@ -106,7 +106,8 @@ MonoBehaviour:
   XpOrb: {fileID: 1658854340126358033, guid: b9ab82396ed530c4298a37620485b787, type: 3}
   heart: {fileID: 1507277176927489570, guid: 2252db2f8c4d7f04aa842def3fb57e64, type: 3}
   EnemyLocation: {fileID: 5620073586557526143}
-  enemyHealth: 500
+  enemyHealth: 200
+  dead: 0
 --- !u!114 &5620073586557526082
 MonoBehaviour:
   m_ObjectHideFlags: 0
