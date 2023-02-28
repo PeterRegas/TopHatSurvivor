@@ -60,11 +60,18 @@ public class PlayerAttributes : MonoBehaviour
 
         if (collision.gameObject.CompareTag("enemy"))
         {
-            updateHealth(-20);
+            if(collision.GetComponent<enemy>().dead==false){
+                updateHealth(-20);
+            }
+            
         }
         if (collision.gameObject.CompareTag("xp"))
         {
             updateXP(20);
+        }
+        if (collision.gameObject.CompareTag("hp"))
+        {
+            updateHealth(20);
         }
     }
 

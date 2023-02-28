@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5620073586557526083}
   - component: {fileID: 5620073586557526080}
   - component: {fileID: 6206730869787025314}
+  - component: {fileID: 6714280344192496620}
   m_Layer: 7
   m_Name: SkeleBoss
   m_TagString: enemy
@@ -101,7 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27823123b075d6a4e93250667b86f7c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 6714280344192496620}
   XpOrb: {fileID: 1658854340126358033, guid: b9ab82396ed530c4298a37620485b787, type: 3}
+  heart: {fileID: 1507277176927489570, guid: 2252db2f8c4d7f04aa842def3fb57e64, type: 3}
   EnemyLocation: {fileID: 5620073586557526143}
   enemyHealth: 500
 --- !u!114 &5620073586557526082
@@ -117,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
+  sprite: {fileID: 5620073586557526140}
   enemyPhysics: {fileID: 5620073586557526083}
   targplayer: {fileID: 0}
 --- !u!50 &5620073586557526083
@@ -171,3 +175,23 @@ MonoBehaviour:
   shootSpot: {fileID: 5620073586557526143}
   Bullet: {fileID: 7412967667215701090, guid: c096b5043052cec4d91bedadbc0e9ce0, type: 3}
   fireRate: 150
+--- !u!95 &6714280344192496620
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5620073586557526081}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6d0456fd45bab514d8ef36cbc812299d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
