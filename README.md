@@ -55,10 +55,10 @@ The project will be evaluated both objectively and subjectively.
 The objective evaluation, which amounts to `12/30` of the marks, will account for each of the major course concepts.  If you have implemented a particular course concept yourself, and have included instructions for the children in your audience, then you will get full marks.  If you have implemented it incorrectly, or have used someone else’s code to complete it, you will receive partial marks.  If you have not implemented it, you will receive zero for that course concept.  This list will stay the same until the due date of the project, so there is no excuse for not getting full marks for this part of the evaluation.  These major concepts are:
 
 - `2.0 marks` - Level creation ✓
-- `2.0 marks` - Sprite animation (via sprite sheets and/or rigging)
+- `2.0 marks` - Sprite animation (via sprite sheets and/or rigging) ✓
 - `1.0 marks` - Physics/collision system ✓
 - `1.0 marks` - User input ✓
-- `1.0 marks` - Game state loading/saving 
+- `1.0 marks` - Game state loading/saving ✓
 - `1.0 marks` - Menus, HUD, and other gameplay interfaces (e.g. health bars) ✓
 - `3.0 marks` - Instructions
 - `1.0 marks` - Trailer video for your sample game
