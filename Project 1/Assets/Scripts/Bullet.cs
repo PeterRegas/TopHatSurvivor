@@ -14,8 +14,7 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject,range);
          Vector3 shotDir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
          shotDir = shotDir/shotDir.magnitude;
-         bulletPhysics.rotation = Mathf.Atan2(shotDir.y, shotDir.x) * Mathf.Rad2Deg;
-         bulletPhysics.velocity = shotDir * shotSpeed;
+        bulletPhysics.velocity = shotDir * shotSpeed;
         
     }
 

@@ -14,7 +14,7 @@ public class Shoot : MonoBehaviour
     void Update()
     {
         i++;
-        if(i>=fireRate){
+        if(i==fireRate){
             Fire();
             i=0;
         }

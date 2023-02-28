@@ -60,25 +60,18 @@ public class PlayerAttributes : MonoBehaviour
 
         if (collision.gameObject.CompareTag("enemy"))
         {
-            if(collision.GetComponent<enemy>().dead==false){
-                updateHealth(-20);
-            }
-            
+            updateHealth(-20);
         }
         if (collision.gameObject.CompareTag("xp"))
         {
             updateXP(20);
-        }
-        if (collision.gameObject.CompareTag("hp"))
-        {
-            updateHealth(20);
         }
     }
 
     //changes player health based on a given value
     //Useful for when enemy hits, give a negative value
     //Useful for when player picks up health, give postive value
-    public void updateHealth(int value)
+    private void updateHealth(int value)
     {
         saveState.health += value;
         healthSlider.value = saveState.health;
