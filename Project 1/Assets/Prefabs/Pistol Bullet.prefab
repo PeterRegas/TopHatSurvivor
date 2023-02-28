@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7465c92f62851940a799e5e3f024371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotSpeed: 20
+  shotSpeed: 4
   range: 1
   damage: 5
   bulletPhysics: {fileID: 2288624135583980624}

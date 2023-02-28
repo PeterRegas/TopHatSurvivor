@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public int shotSpeed = 20;
+    public int shotSpeed = 10;
     public int range = 1;
     public int damage = 5;
     public Rigidbody2D bulletPhysics;
@@ -12,10 +12,26 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         Destroy(gameObject,range);
-         Vector3 shotDir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-         shotDir = shotDir/shotDir.magnitude;
-         bulletPhysics.rotation = Mathf.Atan2(shotDir.y, shotDir.x) * Mathf.Rad2Deg;
-         bulletPhysics.velocity = shotDir * shotSpeed;
+        //gets mouse position
+        Vector2 shotDir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        shotDir.Normalize();
+        //rotates bullet to the direction its being shot
+        bulletPhysics.rotation = Mathf.Atan2(shotDir.y, shotDir.x) * Mathf.Rad2Deg;
+        //changes the speed of the bullet to the shotspeed
+        
+        //changes the shot speed to allow you to shoot in the direction you are walking without the bullets being slow
+        if((GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().xDirection>0 & shotDir.x>0) 
+        | (GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().xDirection<0 & shotDir.x<0) 
+        | (GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().yDirection>0 & shotDir.y>0) 
+        | (GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().yDirection<0 & shotDir.y<0)){
+            shotSpeed += GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().movementSpeed;
+        }
+        //changes the speed of the bullet to the shotspeed
+        shotDir *= shotSpeed;
+
+        bulletPhysics.velocity = shotDir;
+        
+         
         
     }
 
