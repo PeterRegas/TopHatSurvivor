@@ -4,12 +4,20 @@ using System.IO;
 public class SaveManager : MonoBehaviour
 {
     public SaveState playerStats = null;
-
+    private static SaveManager instance;
     private string savePath;
 
     private void Awake()
     {
-        DontDestroyOnLoad(this);
+        
+        if(instance == null)
+        {
+            DontDestroyOnLoad(this);
+            instance = this;
+
+        }
+        
+
         savePath = Application.persistentDataPath + "/saveData/";
         if (!Directory.Exists(savePath))
         {
