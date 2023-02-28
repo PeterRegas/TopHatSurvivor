@@ -391,7 +391,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1380063778}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SaveManager, Assembly-CSharp
         m_MethodName: savePlayerStats
         m_Mode: 1
@@ -685,7 +685,7 @@ Transform:
   - {fileID: 1075319180}
   - {fileID: 2143690854}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &354376748
 GameObject:
@@ -4961,7 +4961,7 @@ Transform:
   m_Children:
   - {fileID: 723711467}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1066618627
 GameObject:
@@ -5383,6 +5383,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1307606133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1307606135}
+  - component: {fileID: 1307606134}
+  m_Layer: 0
+  m_Name: SaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1307606134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307606133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83251d7b1f6ef794fa9f6ebeb80e1f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStats:
+    health: 100
+    score: 0
+    level: 1
+    experience: 0
+--- !u!4 &1307606135
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307606133}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.079969, y: -0.0994975, z: 0.44090757}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1380063769
 GameObject:
   m_ObjectHideFlags: 0
@@ -5398,7 +5447,6 @@ GameObject:
   - component: {fileID: 1380063775}
   - component: {fileID: 1380063776}
   - component: {fileID: 1380063777}
-  - component: {fileID: 1380063778}
   m_Layer: 6
   m_Name: Character
   m_TagString: Player
@@ -5523,23 +5571,6 @@ MonoBehaviour:
   levelNum: {fileID: 38282176}
   saveManager: {fileID: 0}
   saveState:
-    health: 100
-    score: 0
-    level: 1
-    experience: 0
---- !u!114 &1380063778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380063769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83251d7b1f6ef794fa9f6ebeb80e1f50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerStats:
     health: 100
     score: 0
     level: 1
@@ -6567,7 +6598,7 @@ RectTransform:
   - {fileID: 1681051049}
   - {fileID: 1167483634}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6753,7 +6784,7 @@ RectTransform:
   - {fileID: 863651564}
   - {fileID: 1581014171}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6863,7 +6894,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2066135280
 GameObject:
