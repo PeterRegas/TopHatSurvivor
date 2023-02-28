@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class enemy : MonoBehaviour
 {
+    [SerializeField] private Animator animator = null;
     public GameObject XpOrb;
     public Transform EnemyLocation;
     public int enemyHealth = 10;
@@ -21,8 +22,9 @@ public class enemy : MonoBehaviour
     public void Hit(int damage){
         enemyHealth -= damage;
         if(enemyHealth <= 0){
+            animator.SetBool("dead", true);
             Instantiate(XpOrb, EnemyLocation.position, EnemyLocation.rotation);
-            Destroy(gameObject);
+            Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length);
         }
     }
 }

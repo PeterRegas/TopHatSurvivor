@@ -2,34 +2,34 @@ using UnityEngine;
 public class Movement : MonoBehaviour {
     
     [SerializeField] float movementSpeed = 10f;
-    //[SerializeField] private Animator animator = null;
+    [SerializeField] private Animator animator = null;
 
     void Update() {
         float xDirection = Input.GetAxis("Horizontal");
         float yDirection = Input.GetAxis("Vertical");
         if(xDirection>0){
-            //animator.SetBool("walk right", true);
+            animator.SetBool("walk right", true);
         }
         else{
-            //animator.SetBool("walk right", false);
+            animator.SetBool("walk right", false);
         }
         if(xDirection<0){
-            //animator.SetBool("walk left", true);
+            animator.SetBool("walk left", true);
         }
         else{
-            //animator.SetBool("walk left", false);
+            animator.SetBool("walk left", false);
         }
         if(yDirection<0){
-            //animator.SetBool("walk down", true);
+            animator.SetBool("walk down", true);
         }
         else{
-            //animator.SetBool("walk down", false);
+            animator.SetBool("walk down", false);
         }
         if(yDirection>0){
-            //animator.SetBool("walk up", true);
+            animator.SetBool("walk up", true);
         }
         else{
-            //animator.SetBool("walk up", false);
+            animator.SetBool("walk up", false);
         }
 
         transform.Translate(Vector3.right * (xDirection * movementSpeed * Time.deltaTime));
