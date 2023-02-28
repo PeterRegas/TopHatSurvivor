@@ -46,3 +46,9 @@ Authors: drjamgo@hotmail.com, bluecarrot16, Evert, TheraHedwig, MuffinElZangano,
 
 - Icons
     - https://kenney.nl/assets/game-icons
+
+- Map
+    - https://opengameart.org/content/map 
+
+- Background
+    - https://opengameart.org/content/industrial-parallax-background

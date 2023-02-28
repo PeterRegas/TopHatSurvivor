@@ -26,8 +26,8 @@ public class MainMenuController : MonoBehaviour
         loadButton = root.Q<Button>("LoadButton");
         startButton.RegisterCallback<ClickEvent>(StartButtonPressed);
         loadButton.RegisterCallback<ClickEvent>(loadButtonPressed);
+        instructionsButton.RegisterCallback<ClickEvent>(instructionsButtonPressed);
     }
-
 
 
     public void StartButtonPressed(ClickEvent click)
@@ -38,9 +38,9 @@ public class MainMenuController : MonoBehaviour
         Debug.Log("Start Pressed");
         SceneManager.LoadScene("TophatSurvivor");
     }
-    void InstructionsButtonPressed()
+    void instructionsButtonPressed(ClickEvent click)
     {
-        SceneManager.LoadScene("TophatSurvivor");
+        SceneManager.LoadScene("InstructionsScene");
     }
 
     void SettingsButtonPressed()
