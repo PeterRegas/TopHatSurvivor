@@ -28,28 +28,13 @@ public class MainMenuController : MonoBehaviour
         loadButton.RegisterCallback<ClickEvent>(loadButtonPressed);
     }
 
-    void LoadScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
 
-        if (isLoad)
-        {
-            SceneManager.sceneLoaded += OnSceneLoaded;
-        }
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (scene.name == "TophatSurvivor")
-        {
-            PlayerAttributes player = FindObjectOfType<PlayerAttributes>();
-            player.saveManager.loadPlayerStats();
-            SceneManager.sceneLoaded -= OnSceneLoaded;
-        }
-    }
 
     public void StartButtonPressed(ClickEvent click)
     {
+        SaveState newSave = new SaveState();
+        Debug.Log(newSave.health);
+        saveManager.playerStats = newSave;
         Debug.Log("Start Pressed");
         SceneManager.LoadScene("TophatSurvivor");
     }
