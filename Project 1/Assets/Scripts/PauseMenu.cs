@@ -12,9 +12,11 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject saveObject;
     private TextMeshProUGUI saveText;
+    private SaveManager saveManager;
 
     private void Awake()
     {
+        saveManager = FindObjectOfType<SaveManager>();
         saveText = saveObject.GetComponent<TextMeshProUGUI>();
         saveText.text = "Save";
     }
@@ -40,6 +42,7 @@ public class PauseMenu : MonoBehaviour
 
     public void saveButtonPressed()
     {
+        saveManager.savePlayerStats();
         saveText.text = "Saved!";
     }
 }
