@@ -9,11 +9,14 @@ public class MainMenuController : MonoBehaviour
 
     UIDocument mainMenuDoccument;
     public Button startButton, instructionsButton, settingsButton, loadButton;
-    PlayerAttributes player ;
+    private SaveManager saveManager ;
     public bool isLoad = false;
+    
+
     // Start is called before the first frame update
     void Awake()
     {
+        saveManager = FindObjectOfType<SaveManager>();
         mainMenuDoccument = GetComponent<UIDocument>();
         var root = mainMenuDoccument.rootVisualElement;
 
@@ -47,7 +50,7 @@ public class MainMenuController : MonoBehaviour
 
     public void StartButtonPressed(ClickEvent click)
     {
-        
+        Debug.Log("Start Pressed");
         SceneManager.LoadScene("TophatSurvivor");
     }
     void InstructionsButtonPressed()
@@ -61,7 +64,7 @@ public class MainMenuController : MonoBehaviour
     }
     void loadButtonPressed(ClickEvent click)
     {
-        isLoad = true;
+        saveManager.loadPlayerStats();
         SceneManager.LoadScene("TophatSurvivor");
         
     }
