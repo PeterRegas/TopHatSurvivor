@@ -8,7 +8,7 @@ using TMPro;
 public class PlayerAttributes : MonoBehaviour
 {
 
-    public int health, score, level;
+    public float health, score, level;
     public float experience;
     private const float baseExperience = 100f;
     private const float levelUpExponent = 0.7f; //Make this larger to make it harder to level up every level

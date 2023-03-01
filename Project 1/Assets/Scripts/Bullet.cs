@@ -5,8 +5,8 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public int shotSpeed = 10;
-    public int range = 1;
-    public int damage = 5;
+    public float range = 1;
+    public float damage = 5;
     public Rigidbody2D bulletPhysics;
     // Start is called before the first frame update
     void Start()
@@ -28,6 +28,7 @@ public class Bullet : MonoBehaviour
         }
         //changes the speed of the bullet to the shotspeed
         shotDir *= shotSpeed;
+        damage += GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributes>().level*1.2f;
 
         bulletPhysics.velocity = shotDir;
         

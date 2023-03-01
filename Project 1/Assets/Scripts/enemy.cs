@@ -8,7 +8,7 @@ public class enemy : MonoBehaviour
     public GameObject XpOrb;
     public GameObject heart;
     public Transform EnemyLocation;
-    public int enemyHealth = 10;
+    public float enemyHealth = 10;
     public bool dead = false;
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class enemy : MonoBehaviour
     {
 
     }
-    public void Hit(int damage){
+    public void Hit(float damage){
         enemyHealth -= damage;
         if(enemyHealth <= 0){
             

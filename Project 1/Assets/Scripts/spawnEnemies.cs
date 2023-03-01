@@ -12,9 +12,9 @@ public class spawnEnemies : MonoBehaviour
     public GameObject boss;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        spawnRate = 100 /  ((double)GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributes>().level * 0.03);
+        spawnRate = 10 /  ((double)GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributes>().level * 0.03);
         i++;
         if(i>=spawnRate){
             j++;

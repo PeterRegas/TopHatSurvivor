@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31fe2e047df54dd40bc998cdefa4bbff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotSpeed: 5
-  range: 25
+  shotSpeed: 4
+  range: 15
   damage: 5
   bulletPhysics: {fileID: 1509291326936692807}
 --- !u!50 &1509291326936692807
