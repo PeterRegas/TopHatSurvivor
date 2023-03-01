@@ -5,10 +5,15 @@ public class Movement : MonoBehaviour {
     [SerializeField] private Animator animator = null;
     public float xDirection;
     public float yDirection;
+    public Rigidbody2D character;
+     Vector2 PInput;
     
     void Update() {
         xDirection = Input.GetAxis("Horizontal");
         yDirection = Input.GetAxis("Vertical");
+        PInput.x = Input.GetAxis("Horizontal");
+        PInput.y = Input.GetAxis("Vertical");
+        PInput.Normalize();
         if(xDirection>0){
             animator.SetBool("walk right", true);
         }
@@ -33,8 +38,10 @@ public class Movement : MonoBehaviour {
         else{
             animator.SetBool("walk up", false);
         }
-        transform.Translate(Vector3.right * (xDirection * movementSpeed * Time.deltaTime));
-        transform.Translate(Vector3.up * (yDirection * movementSpeed * Time.deltaTime));
+        
+    }
+    void FixedUpdate() {
+        character.velocity = new Vector2(PInput.x * movementSpeed, PInput.y * movementSpeed);
     }
 }
 

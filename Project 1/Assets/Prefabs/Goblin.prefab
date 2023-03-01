@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_Sprite: {fileID: -624287491, guid: 7dae8e902b8a4c4498b512acf1fb33b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -143,6 +143,7 @@ MonoBehaviour:
   heart: {fileID: 1507277176927489570, guid: 2252db2f8c4d7f04aa842def3fb57e64, type: 3}
   EnemyLocation: {fileID: 2137453683973700458}
   enemyHealth: 10
+  dead: 0
 --- !u!114 &2137453683973700502
 MonoBehaviour:
   m_ObjectHideFlags: 0
