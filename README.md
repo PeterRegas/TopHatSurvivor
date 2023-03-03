@@ -60,7 +60,7 @@ The objective evaluation, which amounts to `12/30` of the marks, will account fo
 - `1.0 marks` - User input ✓
 - `1.0 marks` - Game state loading/saving ✓
 - `1.0 marks` - Menus, HUD, and other gameplay interfaces (e.g. health bars) ✓
-- `3.0 marks` - Instructions
+- `3.0 marks` - Instructions ✓
 - `1.0 marks` - Trailer video for your sample game
 
 The subjective evaluation amounts to `18/30` marks.  Since it is expected that the objective marks will be close to 100%, these marks will target an average score of around 50% to (somewhat) compensate.  The best groups will receive full marks in one (or more) of these categories, and everybody else will get a mark reflective of their comparative score.  This will further be broken down into three categories:
