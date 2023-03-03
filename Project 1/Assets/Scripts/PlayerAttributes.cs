@@ -53,6 +53,9 @@ public class PlayerAttributes : MonoBehaviour
 
         //Change player level based on 
         levelNum.text = "Level " + saveState.level.ToString();
+
+       
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
