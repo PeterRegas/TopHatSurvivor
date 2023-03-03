@@ -13,12 +13,26 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject saveObject;
     private TextMeshProUGUI saveText;
     private SaveManager saveManager;
+    private bool isPaused = false;
 
     private void Awake()
     {
         saveManager = FindObjectOfType<SaveManager>();
         saveText = saveObject.GetComponent<TextMeshProUGUI>();
         saveText.text = "Save";
+    }
+    private void Update()
+    {
+        if (Input.GetButtonDown("Cancel") && isPaused == false)
+        {
+            pause();
+            isPaused = true;
+        }
+        else if (Input.GetButtonDown("Cancel") && isPaused == true)
+        {
+            resume();
+            isPaused = false;
+        }
     }
 
     public void pause()

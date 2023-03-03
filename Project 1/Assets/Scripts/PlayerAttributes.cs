@@ -15,8 +15,10 @@ public class PlayerAttributes : MonoBehaviour
     [SerializeField] Slider healthSlider;
     [SerializeField] Slider experienceSlider;
     [SerializeField] TextMeshProUGUI levelNum;
+    [SerializeField] TextMeshProUGUI scoreNum;
     public SaveManager saveManager;
     public SaveState saveState;
+    [SerializeField] GameObject deathScreen;
 
 
     // Start is called before the first frame update
@@ -37,6 +39,7 @@ public class PlayerAttributes : MonoBehaviour
         updateXP(0);
         updateHealth(0);
         levelNum.text = "Level " + saveState.level.ToString();
+        scoreNum.text = "Score: " + saveState.score.ToString();
     }
 
     // Update is called once per frame
@@ -53,6 +56,20 @@ public class PlayerAttributes : MonoBehaviour
 
         //Change player level based on 
         levelNum.text = "Level " + saveState.level.ToString();
+        scoreNum.text = "Score: " + saveState.score.ToString();
+
+
+    }
+
+    private void FixedUpdate()
+    {
+        if (health <= 0)
+        {
+            deathScreen.SetActive(true);
+            Time.timeScale = 0.0f;
+            Debug.Log("Bro you dead");
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -89,6 +106,7 @@ public class PlayerAttributes : MonoBehaviour
     private void updateXP(float value)
     {
         saveState.experience += value;
+        saveState.score += Mathf.FloorToInt(value);
         float totalExperienceRequired = baseExperience * Mathf.Pow(saveState.level, levelUpExponent);
         if (saveState.experience >= totalExperienceRequired)
         {
