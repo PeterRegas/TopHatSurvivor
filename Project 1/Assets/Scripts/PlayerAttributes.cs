@@ -17,6 +17,7 @@ public class PlayerAttributes : MonoBehaviour
     [SerializeField] TextMeshProUGUI levelNum;
     public SaveManager saveManager;
     public SaveState saveState;
+    [SerializeField] GameObject deathScreen;
 
 
     // Start is called before the first frame update
@@ -55,6 +56,16 @@ public class PlayerAttributes : MonoBehaviour
         levelNum.text = "Level " + saveState.level.ToString();
 
        
+    }
+
+    private void FixedUpdate()
+    {
+        if (health <= 0)
+        {
+            deathScreen.SetActive(true);
+            Time.timeScale = 0.0f;
+            Debug.Log("Bro you dead");
+        }
 
     }
 

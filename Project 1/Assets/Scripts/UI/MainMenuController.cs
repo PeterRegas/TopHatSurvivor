@@ -8,7 +8,7 @@ public class MainMenuController : MonoBehaviour
 {
 
     UIDocument mainMenuDoccument;
-    public Button startButton, instructionsButton, settingsButton, loadButton;
+    public Button startButton, instructionsButton, quitButton, loadButton;
     private SaveManager saveManager ;
     public bool isLoad = false;
     
@@ -22,11 +22,12 @@ public class MainMenuController : MonoBehaviour
 
         startButton = root.Q<Button>("StartButton");
         instructionsButton = root.Q<Button>("InstructionsButton");
-        settingsButton = root.Q<Button>("SettingsButton");
+        quitButton = root.Q<Button>("QuitButton");
         loadButton = root.Q<Button>("LoadButton");
         startButton.RegisterCallback<ClickEvent>(StartButtonPressed);
         loadButton.RegisterCallback<ClickEvent>(loadButtonPressed);
         instructionsButton.RegisterCallback<ClickEvent>(instructionsButtonPressed);
+        quitButton.RegisterCallback<ClickEvent>(quitButtonPressed);
     }
 
 
@@ -43,9 +44,11 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("InstructionsScene");
     }
 
-    void SettingsButtonPressed()
+    void quitButtonPressed(ClickEvent click)
     {
-        SceneManager.LoadScene("TophatSurvivor");
+        Debug.Log("quit");
+        UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
     }
     void loadButtonPressed(ClickEvent click)
     {
