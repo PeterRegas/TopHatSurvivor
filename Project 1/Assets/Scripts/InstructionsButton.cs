@@ -5,12 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class InstructionsButton : MonoBehaviour
 {
-    private GameObject page1;
+    [SerializeField] GameObject page1;
+    [SerializeField] GameObject page2;
+    
 
-    private void Awake()
-    {
-        page1 = GameObject.Find("Page1");
-    }
+   
     public void goToMainMenu()
     {
         Time.timeScale = 1f;
@@ -19,9 +18,11 @@ public class InstructionsButton : MonoBehaviour
     public void goNextPage()
     {
         page1.SetActive(false);
+        page2.SetActive(true);
     }
     public void goPrevPage()
     {
-
+        page1.SetActive(true);
+        page2.SetActive(false);
     }
 }
