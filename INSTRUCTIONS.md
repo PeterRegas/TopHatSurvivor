@@ -16,6 +16,7 @@ You can use our UI object in our MainMenu scene to create a similar system to st
 
 ## Creating Instructions
 The instructions scene consists of a background, text on top of an image, and a few buttons. You can opt to use this entire scene for your instructions. You can opt to change the images of the background, and the image the text is layed over to match your game. You can do this by just changing the source images. The buttons will work no matter what, but is designed only for two pages of instructions. You can choose to edit the text game objects to suit the needs of the game. You can also change the videos of the demonstrations by changing the video clip in the corresponding VideoPlayer. 
+
 ![Change Video](DocumentationImages/ChangeVideoImage.png)
 
 ## Creating your HUD
