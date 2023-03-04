@@ -1,6 +1,7 @@
 ## How to set up
 Ensure that you have git installed. Also ensure that you have Unity 2021.3.17f1 installed. Later versions may work as well, but that is the version the game was developed in. We have not tested it in other versions. Be sure to clone the repository into a desired folder. 
 Open the project using unity hub. It may prompt you to install some extra things if it is your first time using Unity hub. The first open will take much longer than the rest due to Unity downloading necessary files. 
+You may also need to add the scenes to the build settings. You can find this in File > Build settings. There are three scenes to add: MainMenu, InstructionsScene, and TophatSurvivor. They need to be in this order in the list. 
 
 ## How to play test
 Unity hub should open the game to the main menu screen. YOU NEED TO START FROM THIS SCENE. If it does not open this screen, you can find it at Project 1/Assets/Scenes/MainMenu.unity. 
@@ -20,3 +21,10 @@ The instructions scene consists of a background, text on top of an image, and a 
 ![Change Video](DocumentationImages/ChangeVideoImage.png)
 
 ## Creating your HUD
+Your HUD (Heads up display) is connected with your player. It consists of the health, level, and score. The hud is connected to the PlayerAttributes.cs script. You can find this in Project 1/Assets/Scripts. You can add this script to your player to ensure that they have specific attributes. With your HUD connected with this script in your player, whenever you make contact with an enemy you will lose HP, and when you pick up an XP or HP orb, you will gain experience, health and score. They XP and HP orbs need to have the tags "xp" and "hp" respectively to work. 
+
+## Creating your pause menu and death screen screen
+Both the pause menu and the death screen are very similar. They both consists of a panel that is initially set inactive. Based on different actions, they will become active (visible). The pause menu shows when the pause button or "escape" is pressed. The death screen appears when the player's health reaches 0. Both of them consists of buttons that will take you to the corresponding screens. You can change this in the Pausemenu.cs file to load whatever scenes you wish. 
+
+## Saving
+Saving is done by putting the stats of the player in a gameobject initially in the Mainmenu scene. This needs to be done to ensure the player can load and start a new game properly. You can create an empty object and attach a SaveManager script to it. You can find this script in Project 1/Assets/Scripts/Saving. Our Player object will interact with this object to get its attributes and saves. 
