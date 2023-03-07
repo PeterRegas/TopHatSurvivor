@@ -14,8 +14,11 @@ public class spawnEnemies : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        spawnRate = 10 /  ((double)GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributes>().level * 0.03);
+        spawnRate = 10 /  ((double)GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributes>().level * 0.04);
         i++;
+        if(GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributes>().level>=8){
+            j=100;
+        }
         if(i>=spawnRate){
             j++;
             Vector2 spawn = Random.insideUnitCircle.normalized * 30;

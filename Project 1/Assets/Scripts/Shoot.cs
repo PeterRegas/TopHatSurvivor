@@ -21,8 +21,8 @@ public class Shoot : MonoBehaviour
     {
         i++;
         j++;
-        if(gameObject.tag == "Player" & fireRate >= 0){
-            fireRate = baseFire - (5*GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributes>().level);
+        if(gameObject.tag == "Player" & fireRate >= 0 &GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributes>().level>1){
+            fireRate = baseFire - (6*GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributes>().level);
         }
         if(gameObject.tag == "Player" & GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributes>().level>4 & j>=fireRate*5){
             FireRandom();
