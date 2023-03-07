@@ -47,7 +47,6 @@ public class MainMenuController : MonoBehaviour
     void quitButtonPressed(ClickEvent click)
     {
         Debug.Log("quit");
-        UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
     void loadButtonPressed(ClickEvent click)
