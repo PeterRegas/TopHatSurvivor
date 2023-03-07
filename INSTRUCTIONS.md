@@ -28,3 +28,21 @@ Both the pause menu and the death screen are very similar. They both consists of
 
 ## Saving
 Saving is done by putting the stats of the player in a gameobject initially in the Mainmenu scene. This needs to be done to ensure the player can load and start a new game properly. You can create an empty object and attach a SaveManager script to it. You can find this script in Project 1/Assets/Scripts/Saving. Our Player object will interact with this object to get its attributes and saves. 
+
+## Movement script
+The movement script can be dragged onto any game object you would like to move around with WASD check the Player object on our game to see how to setup a character. the movementSpeed field can be changed to change the objects movement speed and the Animator field can have an animator draged onto it to link the animations with the movement.
+
+## EnemyMove script
+this script causes the gameobject to move towards the player object. movement speed field is set with movementSpeed, enemy sprite used for animation is draged into SpriteRenderer, rigidbody of the gameobject is dragged into enemyPhysiscs. for an example of this check either of the enemy prefabs.
+
+## Shoot script
+The shoot script is used to have a game object shoot a projectile prefab in this case we can use a friendly bullet or enemy bullet. to use the script first add it to the object you would like to shoot. the shootspot is the location where the bullet will be fired from you can drag on the location of the player or a gun they are holding if you have one. the bullet field will require you to drag on the bullet prefab you are using and the bullet random can be the same or different prefab this is for the random direction bullet that is unlocked after hitting level 5. you can also change the base firerate. see player or one of the enemy prefabs for an example how this works.
+
+## Bullet, Enemy bullet, and BulletRandom script
+the bullet script is used with a prefab of your choice to create a projectile that damages enemies on contact. bulletPhysics requires you to drag the rigidbody of your bullet into it. bullet also has the ability to change the projectiles shotspeed range and damage through the fields. Enemy bullet works the same way but damages players instead of enemies. BulletRandom works the same way but fires the bullet in a random direction damaging enemy on contact. see the Pistol Bullet Pistol BulletRand or EnemyBullet prefab for an example of how this works.
+
+## spawnEnemies Script
+spawns enemies with spawn rate increasing based on player level. Drag the base enemy prefab you want to spawn into enemy and the boss you want to spawn at player level 5 and higher into bos. Use this script on the player. Check out the player for an example how to use this script. 
+
+## Enemy Script
+this script sets up your enemy prefab with its health, and death. drag the animator for your enemy into animator to set the death animation, drag the prefab for your experiance into XpOrb and prefab for health pickup into heart. drag the tranform of the prefab into enemy location and set the health of your enemy using the enemyHealth field. see any of the enemy prefabs to see how this works.
