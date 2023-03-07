@@ -15,8 +15,14 @@ public class EnemyBullet : MonoBehaviour
         Vector2 shotDir = Random.insideUnitCircle;
         shotDir.Normalize();
         bulletPhysics.rotation = Mathf.Atan2(shotDir.y, shotDir.x) * Mathf.Rad2Deg;
-        bulletPhysics.velocity = shotDir * shotSpeed;
         
+        if((GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().xDirection>0 & shotDir.x>0) 
+        | (GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().xDirection<0 & shotDir.x<0) 
+        | (GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().yDirection>0 & shotDir.y>0) 
+        | (GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().yDirection<0 & shotDir.y<0)){
+            shotSpeed += 4;
+        }
+        bulletPhysics.velocity = shotDir * shotSpeed;
     }
     void OnTriggerEnter2D(Collider2D thing)
     {

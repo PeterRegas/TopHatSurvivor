@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour
         }
         //changes the speed of the bullet to the shotspeed
         shotDir *= shotSpeed;
-
+        damage += GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributes>().level;
         bulletPhysics.velocity = shotDir;
         
          
