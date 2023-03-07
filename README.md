@@ -7,7 +7,7 @@ You can work on this assignment alone or in a group of no more than 2 students.
 | Jonathan Zhu | ImJonathanZ |
 | Peter Regas | PeterRegas |
 
-Trailer video URL: _________________________
+Trailer video URL: https://www.youtube.com/watch?v=L_wKFejtyyo
 
 _**Note:** The commit logs will be examined to be sure that both participants participated equally on this project._
 
