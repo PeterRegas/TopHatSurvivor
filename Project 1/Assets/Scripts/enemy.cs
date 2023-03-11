@@ -4,23 +4,20 @@ using UnityEngine;
 
 public class enemy : MonoBehaviour
 {
+    //enemy animator
     [SerializeField] private Animator animator = null;
+    //xp drops
     public GameObject XpOrb;
+    //health drops
     public GameObject heart;
+    //enemy location
     public Transform EnemyLocation;
+    //set enemys health
     public float enemyHealth = 10;
     public bool dead = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    //when enemy is hit after they take damage check if they are dead
+    //if so remove enemy and randomly drop health or xp
     public void Hit(float damage){
         enemyHealth -= damage;
         if(enemyHealth <= 0){
