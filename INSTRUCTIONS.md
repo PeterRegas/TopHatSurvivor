@@ -3,6 +3,9 @@ Ensure that you have git installed. Also ensure that you have Unity 2021.3.17f1 
 Open the project using unity hub. It may prompt you to install some extra things if it is your first time using Unity hub. The first open will take much longer than the rest due to Unity downloading necessary files. 
 You may also need to add the scenes to the build settings. You can find this in File > Build settings. There are three scenes to add: MainMenu, InstructionsScene, and TophatSurvivor. They need to be in this order in the list. 
 
+## Assets
+You can find Project 1/Assets/Characters. Here you can change the look of the player enemies. Although, animations may have to be redone for each new character. You can also find new assets in Project 1/Assets/TilePallettes for the map/background. Here you can use these assets to create a new level by creating a new tilemap, you just need to set up the boarders with a box collider and a rigid body so the character cannot walk through the edges of the map.
+
 ## How to play test
 Unity hub should open the game to the main menu screen. YOU NEED TO START FROM THIS SCENE. If it does not open this screen, you can find it at Project 1/Assets/Scenes/MainMenu.unity. 
 ![MainMenu Screen](DocumentationImages/MainMenuImage.png)
@@ -47,8 +50,10 @@ spawns enemies with spawn rate increasing based on player level. Drag the base e
 ## Enemy Script
 this script sets up your enemy prefab with its health, and death. drag the animator for your enemy into animator to set the death animation, drag the prefab for your experiance into XpOrb and prefab for health pickup into heart. drag the tranform of the prefab into enemy location and set the health of your enemy using the enemyHealth field. see any of the enemy prefabs to see how this works.
 
-##PlayerAttribute Script
+## PlayerAttribute Script
 This script is crutial in giving your character the attributes and saving as well. Drag this script into your player gameobject. Also drag in the appropriate gameobjects into the correct serialized fields to ensure the player is intereacting with the score and HUD. See the Character gameobject for an example. 
 
-##PauseMenu Script
+## PauseMenu Script
 This script handles all the buttons in the pause screen, along with freezing the game once the pause is hit and unfreezing when the game is resumed. There are various functions in this script that you can use in any buttons in order to do pause-menu related things. You can drag and drop this script into any element in your pause canvas. You need to assign your buttons to the corresponding functions within this script. See the PauseButton for an example. 
+
+
