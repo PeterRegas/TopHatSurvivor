@@ -37,6 +37,7 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D thing)
     {
+        //if bullet hits enemy do damage
         if(thing.tag == "enemy"){
             thing.GetComponent<enemy>().Hit(damage);
             Destroy(gameObject);
